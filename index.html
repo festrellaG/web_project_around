@@ -23,80 +23,142 @@
       </header>
       <main class="main">
         <section class="profile">
-          <img
-            src="./images/avatar.png"
-            alt="Foto de perfil de un usuario que sube contenido de viajes"
-            class="profile__face-image"
-          />
-          <div class="profile_container">
-            <div class="profile__info">
-              <h1 class="profile__name">Jacques Cousteau</h1>
-              <img
-                src="./images/edit_profile.png"
-                alt="Botón en forma de lápiz que indica que se puede editar la información del perfil"
-                class="profile__edit-data"
-              />
-              <img
-                src="./images/add_picture.png"
-                alt="Botón en forma de signo de + que indica que se puede agregar fotos a su galeria"
-                class="profile__add-picture"
-              />
+          <div class="profile__container">
+            <img
+              src="./images/avatar.png"
+              alt="Foto de perfil de un usuario que sube contenido de viajes"
+              class="profile__face-image"
+            />
+            <div class="profile__data">
+              <div class="profile__info">
+                <h2 class="profile__name">Jacques Cousteau</h2>
+                <img
+                  src="./images/edit_profile.png"
+                  alt="Botón en forma de lápiz que indica que se puede editar la información del perfil"
+                  class="profile__edit-data"
+                />
+              </div>
+              <p class="profile__description">Explorador</p>
             </div>
-            <p class="profile__description">Explorador</p>
-            <div class="profile__popup-edit"></div>
+            <button class="profile__add-picture">
+              <img
+                src="./images/add_icon.png"
+                alt="Botón en forma de signo de + que indica que se puede agregar fotos a su galeria"
+              />
+            </button>
           </div>
         </section>
         <section class="gallery">
-          <figure class="gallery__item">
+          <div class="gallery__item">
             <img
               src="./images/kirill-pershin_1.png"
               alt="Valle de Yosemite"
               class="gallery__image"
-            >Valle de Yosemite</img>
-
-          </figure>
-          <figure class="gallery__item">
+            />
+            <div class="gallery__content-text">
+              <h2 class="gallery__title-item">Valle de Yosemite</h2>
+              <img
+                src="./images/heartSignDesactive.svg"
+                alt="Icono de un corazón para dar me gusta"
+                class="gallery__icon-heart"
+              />
+            </div>
+          </div>
+          <div class="gallery__item">
             <img
               src="./images/kirill-pershin_2.png"
               alt="Lago Louise"
               class="gallery__image"
             />
-          </figure>
-          <figure class="gallery__item">
+            <div class="gallery__content-text">
+              <h2 class="gallery__title-item">Lago Louise</h2>
+              <img
+                src="./images/heartSignDesactive.svg"
+                alt="Icono de un corazón para dar me gusta"
+                class="gallery__icon-heart"
+              />
+            </div>
+          </div>
+          <div class="gallery__item">
             <img
               src="./images/kirill-pershin_3.png"
               alt="Montañas Calvas"
               class="gallery__image"
             />
-          </figure>
-          <figure class="gallery__item">
+            <div class="gallery__content-text">
+              <h2 class="gallery__title-item">Montañas Calvas</h2>
+              <img
+                src="./images/heartSignDesactive.svg"
+                alt="Icono de un corazón para dar me gusta"
+                class="gallery__icon-heart"
+              />
+            </div>
+          </div>
+          <div class="gallery__item">
             <img
               src="./images/kirill-pershin_4.png"
               alt="Latemar"
               class="gallery__image"
             />
-          </figure>
-          <figure class="gallery__item">
+            <div class="gallery__content-text">
+              <h2 class="gallery__title-item">Latemar</h2>
+              <img
+                src="./images/heartSignDesactive.svg"
+                alt="Icono de un corazón para dar me gusta"
+                class="gallery__icon-heart"
+              />
+            </div>
+          </div>
+          <div class="gallery__item">
             <img
               src="./images/kirill-pershin_5.png"
               alt="Vanoise National Park"
               class="gallery__image"
             />
-          </figure>
-          <figure class="gallery__item">
+            <div class="gallery__content-text">
+              <h2 class="gallery__title-item">Vanoise National Park</h2>
+              <img
+                src="./images/heartSignDesactive.svg"
+                alt="Icono de un corazón para dar me gusta"
+                class="gallery__icon-heart"
+              />
+            </div>
+          </div>
+          <div class="gallery__item">
             <img
               src="./images/kirill-pershin_6.png"
               alt="Lago di Braies"
               class="gallery__image"
             />
-          </figure>
+            <div class="gallery__content-text">
+              <h2 class="gallery__title-item">Lago di Braies</h2>
+              <img
+                src="./images/heartSignDesactive.svg"
+                alt="Icono de un corazón para dar me gusta"
+                class="gallery__icon-heart"
+              />
+            </div>
+          </div>
         </section>
       </main>
       <footer class="footer">
-        <div>
+        <div class="footer__container">
           <p class="footer__copyright">&#169; 2024. Alrededor de los EEUU</p>
         </div>
       </footer>
+      <div class="popup">
+        <form class="popup__container">
+          <img
+            class="popup__close"
+            src="./images/close_icon.png"
+            alt="icono en tache para cerrar form"
+          />
+          <h1 class="popup__title-update">Edit profile</h1>
+          <input type="text" class="popup__name-update" />
+          <input type="text" class="popup__desc-update" />
+          <button class="popup__buton-update">Guardar</button>
+        </form>
+      </div>
     </div>
     <script src="./scripts/script.js"></script>
   </body>

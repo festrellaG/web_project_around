@@ -1,56 +1,84 @@
 let container = document.querySelector(".profile");
-let btEdit = container.querySelector(".profile__edit-data");
+let containerProfile = container.querySelector(".profile__container");
+let dataProfile = containerProfile.querySelector(".profile__data");
+let profileInfo = dataProfile.querySelector(".profile__info");
 
-btEdit.addEventListener("click", executePopupEditProfile);
+let popupEditProfile = document.querySelector(".popup");
+let form = popupEditProfile.querySelector(".popup__container");
 
-let containerProfile = container.querySelector(".profile_container");
+/* --------------------------------*/
 
-let profileInfo = containerProfile.querySelector(".profile__info");
-let popupEditProfile = containerProfile.querySelector(".profile__popup-edit");
+/* -------------------------------- cerrar ventana emergente*/
+let btClose = form.querySelector(".popup__close");
 
-function executePopupEditProfile() {
-  let name = profileInfo.querySelector(".profile__name");
-  let desc = containerProfile.querySelector(".profile__description");
+btClose.addEventListener("click", closePopupEditProfile);
 
-  popupEditProfile.style.display = "block";
-
-  popupEditProfile.insertAdjacentHTML(
-    "beforeend",
-    `
-      <img class="profile__close" src="./images/close_icon.png" alt="icono en tache para cerrar form">
-      <form class="profile__editForm">
-        <h1 class="profile__title-update">Edit profile</h1>
-        <input type="text" class="profile__name-update" value="${name.textContent}">
-        <input type="text" class="profile__desc-update" value="${desc.textContent}">
-        <button class="profile__buton-update">Guardar</button>
-      </form>
-    `
-  );
+function closePopupEditProfile() {
+  popupEditProfile.style.display = "none";
 }
 
-/* -------------------------------- */
+/* -------------------------------- abrir ventana emergente*/
+let btEdit = dataProfile.querySelector(".profile__edit-data");
+btEdit.addEventListener("click", executePopupEditProfile);
 
-let popup = containerProfile.querySelector(".profile__popup-edit");
-let popupForm = popup.querySelector(".profile__editForm");
+function executePopupEditProfile() {
+  popupEditProfile.style.display = "block";
 
-console.log(`Pop: ${popup.classList}`);
-console.log(popupForm);
+  let nameUp = form.querySelector(".popup__name-update");
+  let DescUp = form.querySelector(".popup__desc-update");
 
-let saveProfile = popupForm.querySelector(".profile__buton-update");
+  let name = profileInfo.querySelector(".profile__name");
+  let desc = dataProfile.querySelector(".profile__description");
+
+  nameUp.value = name.textContent;
+  DescUp.value = desc.textContent;
+}
+
+/* -------------------------------- salvar los campos del formulario en la página*/
+let saveProfile = form.querySelector(".popup__buton-update");
 
 saveProfile.addEventListener("click", executeSaveUpdateProfile);
 
-function executeSaveUpdateProfile() {
-  let nameUpdate = popupForm.querySelector(".profile__name-update");
-  let descUpdate = popupForm.querySelector(".profile__desc-update");
-
+function executeSaveUpdateProfile(evt) {
   let nameU = profileInfo.querySelector(".profile__name");
-  let descU = containerProfile.querySelector(".profile__description");
+  let descU = dataProfile.querySelector(".profile__description");
 
-  nameU.textContent = nameUpdate.value;
-  descU.textContent = descUpdate.value;
+  let nameUpa = form.querySelector(".popup__name-update");
+  let DescUpa = form.querySelector(".popup__desc-update");
 
-  popup.style.display = "none";
+  nameU.textContent = nameUpa.value;
+  descU.textContent = DescUpa.value;
+
+  popupEditProfile.style.display = "none";
+  evt.preventDefault();
 }
 
-/* -------------------------------- */
+/* -------------------------------- cambiar el icono de me gusta*/
+let gallery = document.querySelector(".gallery");
+let galleryItem = gallery.querySelector(".gallery__item");
+let galleryContent = galleryItem.querySelector(".gallery__content-text");
+let galleryIcon = galleryContent.querySelector(".gallery__icon-heart");
+
+let image1 = "./images/heartSignDesactive.svg";
+let image2 = "./images/heartSignActive.svg";
+
+arrayImg1 = image1.split("/");
+let img1 = arrayImg1[arrayImg1.length - 1];
+arrayImg2 = image2.split("/");
+let img2 = arrayImg2[arrayImg2.length - 1];
+
+function changeIconLike() {
+  let array = galleryIcon.src.split("/");
+  let imgIcon = array[array.length - 1];
+
+  console.log(imgIcon.endsWith(img1));
+  if (imgIcon.endsWith(img1)) {
+    galleryIcon.src = image2;
+  } else {
+    galleryIcon.src = image1;
+  }
+}
+
+galleryIcon.addEventListener("click", changeIconLike);
+
+/* --------------------------------*/
