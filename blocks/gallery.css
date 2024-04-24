@@ -56,6 +56,23 @@
   opacity: 0.5;
 }
 
+@media screen and (max-width: 768px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    grid-row-gap: 20px;
+    max-width: 720px;
+    margin-top: 36px;
+  }
+
+  .gallery__image {
+    object-fit: fill;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .gallery {
     display: grid;
