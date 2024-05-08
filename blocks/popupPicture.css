@@ -1,4 +1,4 @@
-.popup {
+.popup-picture {
   display: none;
   position: fixed;
   width: 100%;
@@ -8,18 +8,18 @@
   background-color: #00000081;
 }
 
-.popup__close {
+.popup-picture__close {
   position: absolute;
   top: -33px;
   right: -33px;
   cursor: pointer;
 }
 
-.popup__close:hover {
+.popup-picture__close:hover {
   opacity: 0.5;
 }
 
-.popup__container {
+.popup-picture__container {
   position: fixed; /*absolute*/
   width: 370px;
   padding: 35px;
@@ -36,7 +36,7 @@
   box-sizing: border-box;
 }
 
-.popup__title-update {
+.popup-picture__title-create {
   font-size: 24px;
   color: #000000;
   text-align: start;
@@ -44,7 +44,7 @@
   margin-bottom: 54px;
 }
 
-.popup__name-update {
+.popup-picture__name-create {
   font-size: 14px;
   display: flex;
   align-items: flex-start;
@@ -55,7 +55,7 @@
   margin-bottom: 30px;
 }
 
-.popup__desc-update {
+.popup-picture__link-create {
   font-size: 14px;
   display: flex;
   align-items: flex-start;
@@ -66,7 +66,7 @@
   margin-bottom: 48px;
 }
 
-.popup__buton-update {
+.popup-picture__buton-create {
   font-size: 18px;
   text-align: center;
   width: 100%;
@@ -77,26 +77,26 @@
   cursor: pointer;
 }
 
-.popup__buton-update:hover {
+.popup-picture__buton-create:hover {
   opacity: 0.7;
 }
 
 @media screen and (max-width: 320px) {
-  .popup__container {
+  .popup-picture__container {
     width: 282px;
     height: 322px;
-    padding: 20px;
+    padding: 26px;
     top: 48%;
   }
 
-  .popup__close {
+  .popup-picture__close {
     position: absolute;
     top: -50px;
     right: 7px;
     cursor: pointer;
   }
 
-  .popup__title-update {
+  .popup-picture__title-create {
     font-size: 18px;
     color: #000000;
     text-align: start;
@@ -104,11 +104,11 @@
     margin-bottom: 76px;
   }
 
-  .popup__desc-update {
+  .popup-picture__name-create {
     margin-bottom: 46px;
   }
 
-  .popup__buton-update {
+  .popup-picture__buton-create {
     font-size: 14px;
     height: 46px;
   }

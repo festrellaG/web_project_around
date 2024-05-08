@@ -20,6 +20,20 @@
   /*border: 1px solid #000;*/
   border-radius: 10px;
   background-color: #fff;
+  position: relative;
+  width: 282px;
+  height: 361px;
+}
+
+.gallery__trash {
+  position: absolute;
+  top: 18px;
+  right: 14px;
+  cursor: pointer;
+}
+
+.gallery__trash:hover {
+  opacity: 0.5;
 }
 
 .gallery__image {
@@ -27,6 +41,7 @@
   height: 80%;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
+  cursor: pointer;
 }
 
 .gallery__title-item {
@@ -47,25 +62,37 @@
   border-radius: 0 0 10px 10px;
 }
 
-.gallery__icon-heart {
+.gallery__like {
   width: 21px;
   cursor: pointer;
+  background: url(../images/heartSignDesactive.svg) center no-repeat;
+  background-size: 100%;
+  border: none;
 }
 
-.gallery__icon-heart:hover {
+.gallery__like:hover {
   opacity: 0.5;
+}
+
+.gallery__like_active {
+  opacity: 1;
+  background: url(../images/heartSignActive.svg) center no-repeat;
 }
 
 @media screen and (max-width: 768px) {
   .gallery {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    grid-row-gap: 20px;
-    max-width: 720px;
+    grid-column-gap: 18px;
+    max-width: 700px;
     margin-top: 36px;
+  }
+
+  .gallery__item {
+    width: 100%;
   }
 
   .gallery__image {
