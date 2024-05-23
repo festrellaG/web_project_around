@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   background-color: #00000081;
+  cursor: pointer;
 }
 
 .popup__close {
@@ -34,6 +35,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  cursor: default;
 }
 
 .popup__title-update {
@@ -41,7 +43,6 @@
   color: #000000;
   text-align: start;
   margin: 0;
-  margin-bottom: 54px;
 }
 
 .popup__name-update {
@@ -52,7 +53,7 @@
   border: 0;
   border-bottom: 1px solid grey;
   margin: 0;
-  margin-bottom: 30px;
+  margin-top: 54px; /* 30px */
 }
 
 .popup__desc-update {
@@ -63,7 +64,19 @@
   border: 0;
   border-bottom: 1px solid grey;
   margin: 0;
-  margin-bottom: 48px;
+  margin-top: 30px;
+}
+
+.popup__input_type_error {
+  border-bottom: 1px solid red;
+}
+
+.popup__error {
+  color: red;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
 }
 
 .popup__buton-update {
@@ -75,10 +88,34 @@
   opacity: 1;
   height: 50px;
   cursor: pointer;
+  margin-top: 48px;
 }
 
 .popup__buton-update:hover {
   opacity: 0.7;
+}
+
+.popup__button_inactive {
+  color: #b8b8b8;
+  background: #ededed;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  opacity: 0.5;
+}
+
+.popup__input-error_active {
+  opacity: 1;
+}
+
+.input-name-error {
+  text-align: left;
+}
+
+.input-desc-error {
+  text-align: left;
 }
 
 @media screen and (max-width: 320px) {
@@ -101,15 +138,15 @@
     color: #000000;
     text-align: start;
     margin: 0;
-    margin-bottom: 76px;
   }
 
   .popup__desc-update {
-    margin-bottom: 46px;
+    margin-top: 46px;
   }
 
   .popup__buton-update {
     font-size: 14px;
     height: 46px;
+    margin-top: 46px;
   }
 }
