@@ -1,3 +1,4 @@
+//-------------------------- Validación de los campos del formulario, muestra o quita errores
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(settings.inputErrorClass);
@@ -12,6 +13,7 @@ const hideInputError = (formElement, inputElement, settings) => {
   errorElement.textContent = "";
 };
 
+//-------------------------- Verifica si el input es válido
 const checkInputValidity = (formElement, inputElement, settings) => {
   if (!inputElement.validity.valid) {
     showInputError(
@@ -25,24 +27,25 @@ const checkInputValidity = (formElement, inputElement, settings) => {
   }
 };
 
+//-------------------------- Verifica si hay campos inválidos
 const hasInvalidInput = (inputList) => {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
 };
 
+//-------------------------- Cambia el estado del botón
 const toggleButtonState = (inputList, buttonElement, settings) => {
-  //console.log(hasInvalidInput(inputList));
+  console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add(settings.inactiveButtonClass);
   } else {
     buttonElement.classList.remove(settings.inactiveButtonClass);
   }
-  console.log("boton", buttonElement);
 };
 
+//-------------------------- Obtiene los inputs por formulario y les añade eventos
 const setEventListeners = (formElement, settings) => {
-  //console.log("setEventListeners");
   const inputList = Array.from(
     formElement.querySelectorAll(settings.inputSelector)
   );
@@ -61,6 +64,7 @@ const setEventListeners = (formElement, settings) => {
   });
 };
 
+//-------------------------- Itera todos los formularios y les añade los eventos
 const enableValidation = (settings) => {
   const formList = Array.from(document.querySelectorAll(settings.formSelector));
   formList.forEach((formElement) => {
@@ -71,6 +75,7 @@ const enableValidation = (settings) => {
   });
 };
 
+//-------------------------- Validación de los campos del formulario
 enableValidation({
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -82,12 +87,34 @@ enableValidation({
 });
 
 //-------------------------- Cerrar ventana emergente del popup
-const overlay = document.querySelector(".page");
 const popup = document.querySelector(".popup");
+const popupPic = document.querySelector(".popup-picture");
+const popupShow = document.querySelector(".popup-show");
 
-overlay.addEventListener("change", function (event) {
-  console.log(event.target);
-  if (event.target === overlay) {
+//-------------------------- Al realizar click fuera del popup, se cierra
+popup.addEventListener("click", function (event) {
+  if (event.target === popup) {
     popup.style.display = "none";
   }
 });
+
+popupPic.addEventListener("click", function (event) {
+  if (event.target === popupPic) {
+    popupPic.style.display = "none";
+  }
+});
+
+popupShow.addEventListener("click", function (event) {
+  if (event.target === popupShow) {
+    popupShow.style.display = "none";
+  }
+});
+
+//-------------------------- Al presionar la tecla "Escape", se cierra
+document.onkeydown = function (evt) {
+  if (evt.key == "Escape") {
+    popup.style.display = "none";
+    popupPic.style.display = "none";
+    popupShow.style.display = "none";
+  }
+};

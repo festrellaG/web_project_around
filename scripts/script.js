@@ -101,9 +101,20 @@ btClose.addEventListener("click", () => {
 let btEdit = dataProfile.querySelector(".profile__edit-data");
 btEdit.addEventListener("click", function () {
   popupEditProfile.style.display = "block";
+  let btnUp = form.querySelector(".popup__buton-update");
+  btnUp.classList.add("popup__button_inactive");
+
+  const errorName = form.querySelector(".input-name-error");
+  errorName.textContent = "";
+
+  const errorDesc = form.querySelector(".input-desc-error");
+  errorDesc.textContent = "";
 
   let nameUp = form.querySelector(".popup__name-update");
   let DescUp = form.querySelector(".popup__desc-update");
+
+  nameUp.classList.remove("popup__input_type_error");
+  DescUp.classList.remove("popup__input_type_error");
 
   let name = profileInfo.querySelector(".profile__name");
   let desc = dataProfile.querySelector(".profile__description");
@@ -116,12 +127,23 @@ btEdit.addEventListener("click", function () {
 let btAdd = containerProfile.querySelector(".profile__add-picture");
 btAdd.addEventListener("click", () => {
   popupCreate.style.display = "block";
+  let btnCreate = formCreate.querySelector(".popup-picture__buton-create");
+  btnCreate.classList.add("popup__button_inactive");
+
+  const errorPlace = formCreate.querySelector(".input-place-error");
+  errorPlace.textContent = "";
+
+  const errorLink = formCreate.querySelector(".input-link-error");
+  errorLink.textContent = "";
 
   let nameU = formCreate.querySelector(".popup-picture__name-create");
   let DescU = formCreate.querySelector(".popup-picture__link-create");
 
   nameU.value = "";
   DescU.value = "";
+
+  nameU.classList.remove("popup__input_type_error");
+  DescU.classList.remove("popup__input_type_error");
 });
 
 /* -------------------------------- salvar los campos del formulario en la página del popup de edicion perfil*/
