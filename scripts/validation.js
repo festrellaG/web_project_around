@@ -87,8 +87,8 @@ enableValidation({
 });
 
 //-------------------------- Cerrar ventana emergente del popup
-const popup = document.querySelector(".popup");
-const popupPic = document.querySelector(".popup-picture");
+const popup = document.querySelector("#popup-profile");
+const popupPic = document.querySelector("#popup-picture");
 const popupShow = document.querySelector(".popup-show");
 
 //-------------------------- Al realizar click fuera del popup, se cierra

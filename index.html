@@ -55,17 +55,17 @@
           <p class="footer__copyright">&#169; 2024. Alrededor de los EEUU</p>
         </div>
       </footer>
-      <div class="popup">
+      <div class="popup" id="popup-profile">
         <form class="popup__container popup__form">
           <img
             class="popup__close"
             src="./images/close_icon.png"
             alt="icono en tache para cerrar form"
           />
-          <h1 class="popup__title-update">Edita perfil</h1>
+          <h1 class="popup__title">Edita perfil</h1>
           <input
             type="text"
-            class="popup__name-update popup__input"
+            class="popup__name popup__input"
             id="input-name"
             minlength="2"
             maxlength="40"
@@ -74,27 +74,27 @@
           <span class="popup__error input-name-error"></span>
           <input
             type="text"
-            class="popup__desc-update popup__input"
+            class="popup__desc popup__input"
             id="input-desc"
             minlength="2"
             maxlength="200"
             required
           />
           <span class="popup__error input-desc-error"></span>
-          <button class="popup__buton-update popup__button">Guardar</button>
+          <button class="popup__btn popup__button">Guardar</button>
         </form>
       </div>
-      <div class="popup-picture">
-        <form class="popup-picture__container popup__form">
+      <div class="popup" id="popup-picture">
+        <form class="popup__container popup__form">
           <img
-            class="popup-picture__close"
+            class="popup__close"
             src="./images/close_icon.png"
             alt="icono en tache para cerrar formulario para agregar fotos"
           />
-          <h1 class="popup-picture__title-create">Nuevo Lugar</h1>
+          <h1 class="popup__title">Nuevo Lugar</h1>
           <input
             type="text"
-            class="popup-picture__name-create popup__input"
+            class="popup__name popup__input"
             id="input-place"
             placeholder="Titulo"
             minlength="2"
@@ -104,15 +104,13 @@
           <span class="popup__error input-place-error"></span>
           <input
             type="url"
-            class="popup-picture__link-create popup__input"
+            class="popup__desc popup__input"
             id="input-link"
             placeholder="Enlace a la imagen"
             required
           />
           <span class="popup__error input-link-error"></span>
-          <button class="popup-picture__buton-create popup__button">
-            Crear
-          </button>
+          <button class="popup__btn popup__button">Crear</button>
         </form>
       </div>
       <div class="popup-show">

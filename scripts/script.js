@@ -75,16 +75,16 @@ initialPics.forEach(function (element) {
 });
 
 /* -------------------------------- popup edicion*/
-let popupEditProfile = document.querySelector(".popup");
+let popupEditProfile = document.querySelector("#popup-profile");
 let form = popupEditProfile.querySelector(".popup__container");
 /* -------------------------------- popup agregar imagenes*/
-let popupCreate = document.querySelector(".popup-picture");
-let formCreate = popupCreate.querySelector(".popup-picture__container");
+let popupCreate = document.querySelector("#popup-picture");
+let formCreate = popupCreate.querySelector(".popup__container");
 
 /* --------------------------------*/
 
 /* -------------------------------- cerrar ventana emergente del popup de agregar imagenes*/
-let btClosePic = formCreate.querySelector(".popup-picture__close");
+let btClosePic = formCreate.querySelector(".popup__close");
 
 btClosePic.addEventListener("click", function () {
   popupCreate.style.display = "none";
@@ -101,7 +101,7 @@ btClose.addEventListener("click", () => {
 let btEdit = dataProfile.querySelector(".profile__edit-data");
 btEdit.addEventListener("click", function () {
   popupEditProfile.style.display = "block";
-  let btnUp = form.querySelector(".popup__buton-update");
+  let btnUp = form.querySelector(".popup__btn");
   btnUp.classList.add("popup__button_inactive");
 
   const errorName = form.querySelector(".input-name-error");
@@ -110,8 +110,8 @@ btEdit.addEventListener("click", function () {
   const errorDesc = form.querySelector(".input-desc-error");
   errorDesc.textContent = "";
 
-  let nameUp = form.querySelector(".popup__name-update");
-  let DescUp = form.querySelector(".popup__desc-update");
+  let nameUp = form.querySelector(".popup__name");
+  let DescUp = form.querySelector(".popup__desc");
 
   nameUp.classList.remove("popup__input_type_error");
   DescUp.classList.remove("popup__input_type_error");
@@ -127,7 +127,7 @@ btEdit.addEventListener("click", function () {
 let btAdd = containerProfile.querySelector(".profile__add-picture");
 btAdd.addEventListener("click", () => {
   popupCreate.style.display = "block";
-  let btnCreate = formCreate.querySelector(".popup-picture__buton-create");
+  let btnCreate = formCreate.querySelector(".popup__btn");
   btnCreate.classList.add("popup__button_inactive");
 
   const errorPlace = formCreate.querySelector(".input-place-error");
@@ -136,8 +136,8 @@ btAdd.addEventListener("click", () => {
   const errorLink = formCreate.querySelector(".input-link-error");
   errorLink.textContent = "";
 
-  let nameU = formCreate.querySelector(".popup-picture__name-create");
-  let DescU = formCreate.querySelector(".popup-picture__link-create");
+  let nameU = formCreate.querySelector(".popup__name");
+  let DescU = formCreate.querySelector(".popup__desc");
 
   nameU.value = "";
   DescU.value = "";
@@ -147,14 +147,14 @@ btAdd.addEventListener("click", () => {
 });
 
 /* -------------------------------- salvar los campos del formulario en la página del popup de edicion perfil*/
-let saveProfile = form.querySelector(".popup__buton-update");
+let saveProfile = form.querySelector(".popup__btn");
 
 saveProfile.addEventListener("click", function (evt) {
   let nameU = profileInfo.querySelector(".profile__name");
   let descU = dataProfile.querySelector(".profile__description");
 
-  let nameUpa = form.querySelector(".popup__name-update");
-  let DescUpa = form.querySelector(".popup__desc-update");
+  let nameUpa = form.querySelector(".popup__name");
+  let DescUpa = form.querySelector(".popup__desc");
 
   nameU.textContent = nameUpa.value;
   descU.textContent = DescUpa.value;
@@ -167,8 +167,8 @@ saveProfile.addEventListener("click", function (evt) {
 formCreate.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
-  let nameC = formCreate.querySelector(".popup-picture__name-create");
-  let DescC = formCreate.querySelector(".popup-picture__link-create");
+  let nameC = formCreate.querySelector(".popup__name");
+  let DescC = formCreate.querySelector(".popup__desc");
 
   const itemToAdd = createGalleryItem(nameC.value, DescC.value);
   galleryContent.prepend(itemToAdd);
