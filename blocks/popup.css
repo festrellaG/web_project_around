@@ -38,14 +38,14 @@
   cursor: default;
 }
 
-.popup__title-update {
+.popup__title {
   font-size: 24px;
   color: #000000;
   text-align: start;
   margin: 0;
 }
 
-.popup__name-update {
+.popup__name {
   font-size: 14px;
   display: flex;
   align-items: flex-start;
@@ -56,7 +56,7 @@
   margin-top: 54px; /* 30px */
 }
 
-.popup__desc-update {
+.popup__desc {
   font-size: 14px;
   display: flex;
   align-items: flex-start;
@@ -79,7 +79,7 @@
   line-height: 15px;
 }
 
-.popup__buton-update {
+.popup__btn {
   font-size: 18px;
   text-align: center;
   width: 100%;
@@ -91,7 +91,7 @@
   margin-top: 48px;
 }
 
-.popup__buton-update:hover {
+.popup__btn:hover {
   opacity: 0.7;
 }
 
@@ -118,6 +118,14 @@
   text-align: left;
 }
 
+.input-place-error {
+  text-align: left;
+}
+
+.input-link-error {
+  text-align: left;
+}
+
 @media screen and (max-width: 320px) {
   .popup__container {
     width: 282px;
@@ -133,18 +141,18 @@
     cursor: pointer;
   }
 
-  .popup__title-update {
+  .popup__title {
     font-size: 18px;
     color: #000000;
     text-align: start;
     margin: 0;
   }
 
-  .popup__desc-update {
+  .popup__desc {
     margin-top: 46px;
   }
 
-  .popup__buton-update {
+  .popup__btn {
     font-size: 14px;
     height: 46px;
     margin-top: 46px;
