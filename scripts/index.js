@@ -18,7 +18,7 @@ import {
   popupCardNew,
   closePopupCardNewAll,
   formCreate,
-  popupCreate,
+  saveDataImage,
 } from "./utils.js";
 
 //iteracion de imagenes iniciales y su creacion de cards
@@ -38,7 +38,7 @@ btClose.addEventListener("click", closePopupEditProfile);
 popupProfile.addEventListener("click", closePopupEditProfileAll);
 
 //evento para salvar los campos del formulario en la página del popup de edicion perfil
-saveProfile.addEventListener("click", saveDataProfile);
+saveProfile.addEventListener("submit", saveDataProfile);
 
 //evento para cerrar ventana emergente de card new
 btCloseCardNew.addEventListener("click", closePopupCardNew);
@@ -51,17 +51,7 @@ btAdd.addEventListener("click", openCardNew);
 popupCardNew.addEventListener("click", closePopupCardNewAll);
 
 //evento para salvar los campos del formulario en la página del popup de card new
-formCreate.addEventListener("submit", function (evt) {
-  evt.preventDefault();
-
-  let nameC = formCreate.querySelector(".popup__name");
-  let DescC = formCreate.querySelector(".popup__desc");
-
-  const cardCreate = new Card(nameC.value, DescC.value);
-  galleryContent.prepend(cardCreate.generateCard());
-
-  popupCreate.style.display = "none";
-});
+formCreate.addEventListener("submit", saveDataImage);
 
 const formList = Array.from(document.querySelectorAll(".popup__form"));
 

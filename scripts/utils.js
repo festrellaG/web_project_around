@@ -111,6 +111,19 @@ export function saveDataProfile(evt) {
   evt.preventDefault();
 }
 
+/*-------------------------------- salvar los campos del formulario en la página del popup de card new*/
+export function saveDataImage(evt) {
+  evt.preventDefault();
+
+  let nameC = formCreate.querySelector(".popup__name");
+  let DescC = formCreate.querySelector(".popup__desc");
+
+  const cardCreate = new Card(nameC.value, DescC.value);
+  galleryContent.prepend(cardCreate.generateCard());
+
+  popupCreate.style.display = "none";
+}
+
 /* -------------------------------- popup card nueva*/
 export const popupCreate = document.querySelector("#popup-picture");
 export const formCreate = popupCreate.querySelector(".popup__container");
