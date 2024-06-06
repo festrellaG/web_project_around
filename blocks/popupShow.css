@@ -46,7 +46,8 @@
   margin-top: 10px;
 }
 
-@media screen and (max-width: 320px) {
+/*@media screen and (max-width: 320px) {*/
+@media screen and (min-width: 320px) and (max-width: 880px) {
   .popup-show__container {
     width: 282px;
     height: 322px;

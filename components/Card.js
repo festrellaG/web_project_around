@@ -3,6 +3,7 @@ import {
   btnClosePicPop,
   popupPicImage,
   popupPicTitle,
+  closeWithKey,
 } from "../scripts/utils.js";
 
 export class Card {
@@ -64,6 +65,8 @@ export class Card {
     popupPicImage.src = link;
     popupPicImage.alt = name;
     popupPicTitle.textContent = name;
+    //Al presionar la tecla "Escape", se cierra, se agrega
+    document.addEventListener("keydown", closeWithKey);
   }
 
   generateCard() {

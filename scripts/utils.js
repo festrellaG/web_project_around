@@ -46,13 +46,15 @@ export const popupPicTitle = popupPicCont.querySelector(
 
 /* -------------------------------- popup edicion*/
 export const popupEditProfile = document.querySelector("#popup-profile");
-let form = popupEditProfile.querySelector(".popup__container");
+const form = popupEditProfile.querySelector(".popup__container");
 
 /* -------------------------------- cerrar ventana emergente del popup de edicion perfil desde boton "X"*/
 export const btClose = form.querySelector(".popup__close");
 
 export function closePopupEditProfile() {
   popupEditProfile.style.display = "none";
+  //Al presionar la tecla "Escape", se cierra, se quita el evento
+  document.removeEventListener("keydown", closeWithKey);
 }
 
 /* -------------------------------- abrir ventana emergente del popup de edicion perfil*/
@@ -78,6 +80,9 @@ export function openProfile() {
 
   nameUp.value = name.textContent;
   DescUp.value = desc.textContent;
+
+  //Al presionar la tecla "Escape", se cierra, se agrega
+  document.addEventListener("keydown", closeWithKey);
 }
 
 /*-------------------------- Al realizar click fuera del popup, se cierra*/
@@ -115,6 +120,8 @@ export const btCloseCardNew = formCreate.querySelector(".popup__close");
 
 export function closePopupCardNew() {
   popupCreate.style.display = "none";
+  //Al presionar la tecla "Escape", se cierra, se quita el evento
+  document.removeEventListener("keydown", closeWithKey);
 }
 
 /* -------------------------------- abrir ventana emergente del popup de card nueva*/
@@ -137,6 +144,9 @@ export function openCardNew() {
 
   nameU.classList.remove("popup__input_type_error");
   DescU.classList.remove("popup__input_type_error");
+
+  //Al presionar la tecla "Escape", se cierra, se agrega
+  document.addEventListener("keydown", closeWithKey);
 }
 
 /*-------------------------- Al realizar click fuera del popup, se cierra*/
