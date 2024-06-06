@@ -21,14 +21,7 @@ export class FormValidator {
 
   //-------------------------- Verifica si el input es válido
   _checkInputValidity(inputElement, formElement) {
-    if (inputElement.value.trim().length === 0) {
-      inputElement.value = inputElement.value.trim();
-      this._showInputError(
-        inputElement,
-        "No puedes dejar este campo vacío",
-        formElement
-      );
-    } else if (!inputElement.validity.valid) {
+    if (!inputElement.validity.valid) {
       this._showInputError(
         inputElement,
         inputElement.validationMessage,
