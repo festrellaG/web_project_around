@@ -29,7 +29,6 @@ export class FormValidator {
         formElement
       );
     } else if (!inputElement.validity.valid) {
-      inputElement.value = inputElement.value.trim();
       this._showInputError(
         inputElement,
         inputElement.validationMessage,
