@@ -79,7 +79,8 @@
   background: url(../images/heartSignActive.svg) center no-repeat;
 }
 
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {*/
+@media screen and (min-width: 320px) and (max-width: 880px) {
   .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -100,7 +101,8 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+/*@media screen and (max-width: 320px) {*/
+@media screen and (min-width: 320px) and (max-width: 880px) {
   .gallery {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

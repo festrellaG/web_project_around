@@ -1,9 +1,6 @@
 export class FormValidator {
-  constructor(settings) {
+  constructor(settings, formElement) {
     this._settings = settings;
-  }
-
-  _setPropertiesElement(formElement) {
     this._formElement = formElement;
   }
 
@@ -24,7 +21,15 @@ export class FormValidator {
 
   //-------------------------- Verifica si el input es válido
   _checkInputValidity(inputElement, formElement) {
-    if (!inputElement.validity.valid) {
+    if (inputElement.value.trim().length === 0) {
+      inputElement.value = inputElement.value.trim();
+      this._showInputError(
+        inputElement,
+        "No puedes dejar este campo vacío",
+        formElement
+      );
+    } else if (!inputElement.validity.valid) {
+      inputElement.value = inputElement.value.trim();
       this._showInputError(
         inputElement,
         inputElement.validationMessage,
@@ -38,7 +43,9 @@ export class FormValidator {
   //-------------------------- Verifica si hay campos inválidos
   _hasInvalidInput(inputList) {
     return inputList.some((inputElement) => {
-      return !inputElement.validity.valid;
+      return (
+        !inputElement.validity.valid || inputElement.value.trim().length === 0
+      );
     });
   }
 
@@ -93,13 +100,7 @@ export class FormValidator {
 
   //-------------------------- Itera todos los formularios y les añade los eventos
   enableValidation() {
-    const formList = Array.from(
-      document.querySelectorAll(this._settings.formSelector)
-    );
-    formList.forEach((formElement) => {
-      this._setPropertiesElement(formElement);
-      this._getSubmit();
-      this._setEventListeners();
-    });
+    this._getSubmit();
+    this._setEventListeners();
   }
 }
