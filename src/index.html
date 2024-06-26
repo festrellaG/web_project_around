@@ -8,16 +8,15 @@
     <meta name="keywords" content="HTML, CSS, JavaScript" />
 
     <title>Alrededor de los estados Unidos</title>
-
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
     <div class="page">
       <header class="header">
         <img
-          src="./images/logo_header.png"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           alt="Logototipo de una Página iteractiva de viajes por los estados unidos"
           class="header__logo"
+          id="image-logo"
         />
         <span class="header__item-divider"></span>
       </header>
@@ -25,25 +24,28 @@
         <section class="profile">
           <div class="profile__container">
             <img
-              src="./images/avatar.png"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
               alt="Foto de perfil de un usuario que sube contenido de viajes"
               class="profile__face-image"
+              id="image-profile"
             />
             <div class="profile__data">
               <div class="profile__info">
                 <h2 class="profile__name">Jacques Cousteau</h2>
                 <img
-                  src="./images/edit_profile.png"
+                  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                   alt="Botón en forma de lápiz que indica que se puede editar la información del perfil"
                   class="profile__edit-data"
+                  id="image-pencil"
                 />
               </div>
               <p class="profile__description">Explorador</p>
             </div>
             <button class="profile__add-picture">
               <img
-                src="./images/add_icon.png"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                 alt="Botón en forma de signo de + que indica que se puede agregar fotos a su galeria"
+                id="image-add"
               />
             </button>
           </div>
@@ -58,15 +60,17 @@
       <div class="popup" id="popup-profile">
         <form class="popup__container popup__form">
           <img
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
             class="popup__close"
-            src="./images/close_icon.png"
             alt="icono en tache para cerrar form"
+            id="close-profile"
           />
           <h1 class="popup__title">Edita perfil</h1>
           <input
             type="text"
             class="popup__name popup__input"
             id="input-name"
+            name="name"
             minlength="2"
             maxlength="40"
             required
@@ -76,6 +80,7 @@
             type="text"
             class="popup__desc popup__input"
             id="input-desc"
+            name="job"
             minlength="2"
             maxlength="200"
             required
@@ -87,15 +92,17 @@
       <div class="popup" id="popup-picture">
         <form class="popup__container popup__form">
           <img
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
             class="popup__close"
-            src="./images/close_icon.png"
             alt="icono en tache para cerrar formulario para agregar fotos"
+            id="close-card"
           />
           <h1 class="popup__title">Nuevo Lugar</h1>
           <input
             type="text"
             class="popup__name popup__input"
             id="input-place"
+            name="title"
             placeholder="Titulo"
             minlength="2"
             maxlength="30"
@@ -106,6 +113,7 @@
             type="url"
             class="popup__desc popup__input"
             id="input-link"
+            name="link"
             placeholder="Enlace a la imagen"
             required
           />
@@ -113,17 +121,19 @@
           <button class="popup__btn popup__button">Crear</button>
         </form>
       </div>
-      <div class="popup-show">
+      <div class="popup-show" id="popup-show_id">
         <div class="popup-show__container">
           <img
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
             class="popup-show__close"
-            src="./images/close_icon.png"
             alt="icono en tache para cerrar formulario para agregar fotos"
+            id="close-show"
           />
           <img
-            class="popup-show__add"
             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            class="popup-show__add"
             alt="desc"
+            id="image-picture"
           />
           <p class="popup-show__title-create"></p>
         </div>
@@ -132,9 +142,9 @@
       <template id="gallery-template">
         <div class="gallery__item">
           <img
-            src="./images/trash.png"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
             alt="Bote de basura para eliminar una foto"
-            class="gallery__trash"
+            class="gallery__trash gallery__image-trash"
           />
           <img
             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
@@ -148,6 +158,5 @@
         </div>
       </template>
     </div>
-    <script src="./scripts/index.js" type="module"></script>
   </body>
 </html>

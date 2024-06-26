@@ -9,6 +9,10 @@
   cursor: pointer;
 }
 
+.popup_generate {
+  display: block;
+}
+
 .popup__close {
   position: absolute;
   top: -33px;
