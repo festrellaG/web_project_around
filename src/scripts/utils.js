@@ -15,6 +15,9 @@ export const popupPicTitle = popupPicCont.querySelector(
   ".popup-show__title-create"
 );
 
+/* -------------------------------- abre popup para confirmar eliminacion de imagen*/
+export const btnRemove = document.querySelector("#close-delete");
+
 /* -------------------------------- popup edicion*/
 export const btEdit = dataProfile.querySelector(".profile__edit-data");
 
@@ -24,6 +27,7 @@ export const btClose = document.querySelector("#close-profile");
 /* -------------------------------- abrir ventana emergente del popup de edicion perfil*/
 export const profileName = document.querySelector(".profile__name");
 export const profileDesc = document.querySelector(".profile__description");
+export const profileAvatar = document.querySelector(".profile__face-image");
 
 /* -------------------------------- popup card nueva*/
 export const btAdd = containerProfile.querySelector(".profile__add-picture");
@@ -32,3 +36,7 @@ export const jobNewCard = document.querySelector("#input-desc");
 
 /* -------------------------------- cerrar ventana emergente del popup de card nueva desde boton "X"*/
 export const btCloseCardNew = document.querySelector("#close-card");
+
+/* -------------------------------- imagen que ejecuta la edicion de avatar*/
+export const imageProfile = document.querySelector("#image-content");
+export const btnCloseChange = document.querySelector("#close-change");

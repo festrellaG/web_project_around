@@ -62,12 +62,20 @@
   border-radius: 0 0 10px 10px;
 }
 
+.gallery__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .gallery__like {
   width: 21px;
   cursor: pointer;
   background: url(../images/heartSignDesactive.svg) center no-repeat;
   background-size: 100%;
   border: none;
+  height: 21px;
 }
 
 .gallery__like:hover {
@@ -77,6 +85,12 @@
 .gallery__like_active {
   opacity: 1;
   background: url(../images/heartSignActive.svg) center no-repeat;
+}
+
+.gallery__like-number {
+  font-size: 15px;
+  font-weight: normal;
+  color: #000;
 }
 
 /*@media screen and (max-width: 768px) {*/
